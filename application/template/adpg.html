@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>registration</title>
+{% load static %}
+<style>
+*{
+margin:0;
+padding:0;
+}
+body{
+background:#A9A9A9;
+}
+.form-wrap{
+width:320px;
+background:#3e3d3d;
+padding:40px 20px; 
+box-sizing:border-box;
+margin:0px auto;
+}
+h1{
+text-align:center;
+color:#fff;
+font-weight:normal;
+margin-bottom:10px;
+text-decoration:underline;
+}
+input{
+width:100%;
+background:none;
+border:1px solid #fff;
+border-radius:5px;
+padding:6px 20px;
+box-sizing:border-box;
+margin-bottom:5px;
+font-size:16px;
+color:#fff;
+}
+input[type="submit"]{
+background:gray;
+border:0;
+cursor:pointer;
+}
+input[type="submit"]:hover
+{
+background:black;
+}
+placeholder{
+color:#fff;
+}
+span{
+color:#fff;
+margin-left:30px;
+}
+h3{
+color:white;
+}
+#g{
+margin-left:30px;
+}
+</style>
+</head>
+<body>
+<div class="form-wrap">
+<form action="/adpgg/" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<h1>About PG</h1>
+<input type="text" name="t1" value="" placeholder="Name">
+<input type="text" name="t2" value="" placeholder="H-No">
+<input type="text" name="t3" value="" placeholder="Address">
+<input type="text" name="t4" value="" placeholder="sector">
+<input type="text" name="t5" value="" placeholder="Landmark">
+<input type="text" name="t6" value="" placeholder="No of Seats">
+<input type="text" name="t7" value="" placeholder="Room Charges">
+<input type="text" name="t8" value="" placeholder="Food Charges">
+<input type="text" name="t9" value="{{ email }}" placeholder="Email-id" disabled="disabled">
+<input type="hidden" name="t9" id="name" value="{{ email}}"><br/><br/>
+<input type="file" name="t10" value="" placeholder="photo"><br/>
+<input type="submit" value="Register">
+</form>
+</div>
+</body>
+</html>

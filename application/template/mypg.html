@@ -1,0 +1,52 @@
+<html>
+<head>
+</head>
+<body>
+{% load static%}
+<h1>Show applied pg</h1>
+<table height="200px" width="1000px" border="2px">
+<tr>
+<th>pid</th>
+<th>H-No</th>
+<th>Address</th>
+<th>Sector</th>
+<th>seats</th>
+<th>Name</th>
+<th>Email</th>
+<th>Number</th>
+<th>photo</th>
+<th>Action</th>
+
+</tr>
+{% for single in alldata %}
+<tr>
+<th>{{single.pid}}</th>
+<th>{{single.hno}}</th>
+<th>{{single.address}}</th>
+<th>{{single.sector}}</th>
+<th>{{single.seats}}</th>
+<th>{{single.fname}}</th>
+<th>{{single.email}}</th> 
+<th>{{single.no}}</th> 
+<th><img src="{{ single.photo.url }}" height="50" width="50"></th>
+<th>
+	<form action="" method="post">
+		{% csrf_token %}
+		<input type="hidden" name="t1" value="{{single.pid}}"/>
+		<input type="submit" value="" class="a" />
+	<style>
+	.a{
+		background:url({% static 'my/del.png'%}) top;
+		background-size:100%;
+		height:50px;
+		width:50px;
+		cursor:pointer;
+	}
+	</style>
+	</form>
+</th>
+</tr>	
+ {% endfor %}
+</table>
+</body>
+</html>

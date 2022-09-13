@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Show pg</h1>
+<table height="200px" width="1000px" border="2px">
+<tr>
+<th>HNo</th>
+<th>Address</th>
+<th>Sector</th>
+<th>Seats</th>
+<th>Name</th>
+<th>Email</th>
+<th>Number</th>
+</tr>
+{% for single in alldata %}
+<tr>
+<th>{{single.hno}}</th> 
+<th>{{single.address}}</th>
+<th>{{single.sector}}</th>
+<th>{{single.seats}}</th>
+<th>{{single.fname}}</th>
+<th>{{single.email}}</th> 
+<th>{{single.no}}</th>
+</tr>	
+ {% endfor %}
+</table>
+</body>
+</html>

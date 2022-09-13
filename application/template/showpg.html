@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+{% load static%}
+<h1>Show pg</h1>
+<table height="200px" width="1000px" border="2px">
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>H-No</th>
+<th>Address</th>
+<th>Sector</th>
+<th>Landmark</th>
+<th>seats</th>
+<th>Room charges</th>
+<th>Food charges</th>
+<th>Email</th>
+<th>photo</th>
+<th>APPLY</th>
+</tr>
+{% for single in alldata %}
+<tr>
+<th>{{single.id}}</th>
+<th>{{single.name}}</th>
+<th>{{single.hno}}</th>
+<th>{{single.address}}</th>
+<th>{{single.sector}}</th>
+<th>{{single.land}}</th>
+<th>{{single.seats}}</th>
+<th>{{single.room}}</th>
+<th>{{single.food}}</th>
+<th>{{single.email}}</th> 
+<th><img src="{{ single.photo.url }}" height="50" width="50"></th>
+<th>
+	<form action="/apply/" method="post">
+		{% csrf_token %}
+		<input type="hidden" name="t1" value="{{single.id}}">
+		<input type="Submit" value="Apply" class="apply" style="cursor:pointer">
+	</form>	
+	</th>
+	
+
+	
+	
+</tr>	
+ {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Show all users</h1>
+<table height="200px" width="1000px" border="2px">
+<tr>
+<th>First name</th>
+<th>Last name</th>
+<th>Address</th>
+<th>Qualification</th>
+<th>Gender</th>
+<th>Looking for</th>
+<th>Mobile-No</th>
+<th>Email</th>
+<th>Password</th>
+</tr>
+{% for single in alldata %}
+<tr>
+<th>{{single.fname}}</th>
+<th>{{single.lname}}</th>
+<th>{{single.address}}</th>
+<th>{{single.qualification}}</th>
+<th>{{single.gender}}</th>
+<th>{{single.lookingfor}}</th>
+<th>{{single.no}}</th>
+<th>{{single.email}}</th>
+<th>{{single.pwd}}</th>
+
+</tr>
+ {% endfor %}
+</table>
+</body>
+</html>

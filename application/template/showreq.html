@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Show Requests</h1>
+<table height="200px" width="1000px" border="2px">
+<tr>
+<th>Pg No</th>
+<th>Name</th>
+<th>Mobile-No</th>
+<th>Email</th>
+<th>Type</th>
+<th>Message</th>
+<th>Pg Owner</th>
+<th>Pg Email</th>
+</tr>
+{% for single in alldata %}
+<tr>
+<th>{{single.pid}}</th>
+<th>{{single.name}}</th>
+<th>{{single.no}}</th>
+<th>{{single.email}}</th>
+<th>{{single.type}}</th>
+<th>{{single.msg}}</th>
+<th>{{single.p_name}}</th>
+<th>{{single.p_email}}</th>
+</tr>
+ {% endfor %}
+</table>
+</body>
+</html>

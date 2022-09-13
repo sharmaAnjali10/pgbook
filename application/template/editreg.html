@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Registration form</title>
+{% load static %}
+<style>
+*{
+margin:0;
+padding:0;
+}
+body{
+background-image:url("{% static 'images/p1.jpeg' %}");
+background-repeat:no-repeat;
+background-size:100%;
+background-position:center;
+background-attachment:fixed;
+}
+h1{
+color:white;
+text-align:center;
+font-style:italic;
+}
+#a{
+color:white;
+text-align:center;
+font-style:italic;
+font-size:20px;
+}
+.reg{
+margin:auto;
+width:50%;
+background-color:rgb(0,0,0,0.5);
+padding:15px;
+}
+#reg{
+margin:auto;
+width:50%;
+margin-top:20px;
+}
+#name{
+width:300px;
+padding:5px;
+border:none;
+outline:0;
+border-radius:5px;
+border:3px solid #9fabb6;
+}
+#ma{
+color:white;
+text-align:center;
+font-style:italic;
+font-size:20px;
+}
+#ch{
+color:white;
+text-align:center;
+font-style:italic;
+font-size:18px;
+}
+#sub{
+width:300px;
+padding:5px;
+border:none;
+outline:0;
+border-radius:5px;
+border:3px solid #9fabb6;
+background-color:#708090;
+color:white;
+font-size:18px;
+font-style:italic;
+}
+#sub:hover{
+background-color:black;
+}
+p{
+color:white;
+}
+</style>
+</head>
+<body>
+<div class="reg">
+{% for single in alldata %}
+<h1><u>Register Here</u></h1>
+<form action="/final/" method="POST" id="reg">
+{% csrf_token %}
+<span id="a">First Name:</span><br/>
+<input type="text" name="t1" id="name" value="{{ single.fname}}"><br/><br/>
+<span id="a">Last Name:</span><br/>
+<input type="text" name="t2" id="name" value="{{ single.lname}}"><br/><br/>
+<span id="a">Address:</span><br/>
+<input type="text" name="t3"  id="name" value="{{ single.address }}"><br/><br/>
+<span id="a">Mobile-No:</span><br/>
+<select id="ph"><option>+91</option><option>+92</option><option>+93</option>
+<option>+94</option><option>+95</option></select>
+<input type="number" name="t4" id="name" value="{{ single.no}}"><br/><br/>
+<span id="a">Email-id:</span><br/>
+<input type="Email" name="t5" id="name" value="{{ single.email}}" disabled="disabled">
+<input type="hidden" name="t5" id="name" value="{{ single.email}}"><br/><br/>
+<span id="a">Password:</span><br/>
+<input type="Password" name="t6" id="name" value="{{ single.pwd}}"><br/><br/>
+<span id="a">Confirm-password:</span><br/>
+<input type="Password" name="t7" id="name" value="{{ single.cpwd}}"><br/><br/>
+<input type="checkbox" id="c"><span id="ch">i agree all the terms and conditions</span><br/><br/>
+<button type="Submit" id="sub">Register</button><br/><br/>
+<p>Already have an account??<a href="/form/">Login Here</p></a>
+</form>
+{% endfor %}
+</div>
+</div>
+</body>
+</html>

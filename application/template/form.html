@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>LOGIN</title>
+{% load static %}
+<style>
+body{
+margin:0;
+padding:0;
+background:url("{% static 'images/p4.jpeg' %}");
+background-size:cover;
+background-position:center;
+font-family:Times new roman;
+}
+.content{
+position:absolute;
+top:50%;
+left:75%;
+transform:translate(-50%,-50%);
+width:350px;
+height:420px;
+padding:80px 40px;
+box-sizing:border-box;
+background:rgba(0,0,0,0.5);
+}
+h1{
+margin:0;
+padding:0 0 20px;
+color:#FF7F50;
+text-align:center;
+}
+.content p
+{
+padding:0;
+margin:0;
+font-weight:bold;
+font-size:17px;
+color:#fff;
+}
+.content input
+{
+width:100%;
+margin-bottom:20px;
+}
+.content input[type="text"], .content input[type="password"]
+{
+border:none;
+border-bottom:1px solid #fff;
+background:transparent;
+outline:none;
+height:40px;
+color:#fff;
+font-size:16px;
+}
+.content input[type="submit"]
+{
+border:none;
+background:#FF7F50;
+cursor:pointer;
+border-radius:20px;
+outline:none;
+height:40px;
+color:#fff;
+font-size:20px;
+}
+.content input[type="submit"]:hover
+{
+background:#228B22;
+color:white;
+}
+.content a
+{
+color:#fff;
+font-size:14px;
+font-weight:bold;
+}
+::placeholder
+{
+color:rgba(255,255,255,0.5);
+}
+</style>
+</head>
+<body>
+<div class="content">
+<h1><u>LOGIN</u></h1>
+<h1>{{ msg }}</h1>
+<form action="/showuser/" method="POST">
+{% csrf_token %}
+<p>Email</p>
+<input type="text" name="t1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email">
+<p>Password</p>
+<input type="password" name="t2" placeholder="Enter Password">
+<input type="Submit" name="t3" value="Sign in">
+<p>Not Register yet?<a href="/regform/">Create an account</p></a>
+ </form>
+</div>
+</body>
+</html>

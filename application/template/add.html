@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>registration</title>
+{% load static %}
+<style>
+*{
+margin:0;
+padding:0;
+}
+body{
+background:#A9A9A9;
+}
+.form-wrap{
+width:320px;
+background:#3e3d3d;
+padding:40px 20px;
+box-sizing:border-box;
+position:fixed;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+}
+h1{
+text-align:center;
+color:#fff;
+font-weight:normal;
+margin-bottom:20px;
+text-decoration:underline;
+}
+input{
+width:100%;
+background:none;
+border:1px solid #fff;
+border-radius:3px;
+padding:6px 20px;
+box-sizing:border-box;
+margin-bottom:7px;
+font-size:16px;
+color:#fff;
+}
+input[type="submit"]{
+background:gray;
+border:0;
+cursor:pointer;
+}
+input[type="submit"]:hover
+{
+background:black;
+}
+placeholder{
+color:#fff;
+}
+span{
+color:#fff;
+margin-left:30px;
+}
+h3{
+color:white;
+}
+#g{
+margin-left:30px;
+}
+</style>
+</head>
+<body>
+<div class="form-wrap">
+<form action="/mobile/" method="POST">
+{% csrf_token %}
+<h1>About Yourself</h1>
+<input type="text" name="t1" value="" placeholder="First name">
+<input type="text" name="t2" value="" placeholder="Last name">
+<input type="text" name="t3" value="" placeholder="Address"><br/>
+<h3>Gender:</h3>
+<span>Male</span><input type="Radio" name="t4" value="male" id="g">
+<span>Female</span><input type="Radio" name="t4" value="female" id="g">
+<input type="text" name="t5" value="" placeholder="Mobile-no">
+<input type="text" name="t6" value="" placeholder="Email-id">
+<input type="Password" name="t7" value="" placeholder="Password">
+<input type="password" name="t8" value="" placeholder="Confirm-password"><br/>
+<input type="submit" value="Register">
+<p>Already have an account??<a href="/form/">Login Here</p></a>
+</form>
+</div>
+</body>
+</html>
