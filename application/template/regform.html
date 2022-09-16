@@ -68,6 +68,17 @@ color:white;
 font-size:18px;
 font-style:italic;
 }
+.btn{
+   
+    padding:5px;
+border:none;
+outline:0;
+border:2px solid #18ae66;
+background-color:#e9eff5;
+font-size:15px;
+font-style:italic;
+width:50px;
+}
 #sub:hover{
 background-color:black;
 }
@@ -78,6 +89,8 @@ color:white;
 </head>
 <body>
 <div class="reg">
+   
+
 <h1><u>Register Here</u></h1>
 <form action="/regcode/" method="POST" id="reg">
 {% csrf_token %}
@@ -110,6 +123,8 @@ color:white;
 <input type="checkbox" id="c"><span id="ch">i agree all the terms and conditions</span><br/><br/>
 <button type="Submit" id="sub">Register</button><br/><br/>
 <p>Already have an account??<a href="/form/">Login Here</p></a>
+<button class="btn"><a href="/about/">Back</a>
+</button>
 </form>
 </div>
 </div>

@@ -1,24 +1,77 @@
 <html>
 <head>
 {% load static %}
-<link href="{% static 'css/st.css' %}" rel="stylesheet" type="text/css"/>
+<!-- <link href="{% static 'css/st.css' %}" rel="stylesheet" type="text/css"/> -->
 <title>feed</title>
+<style>
+#welcomeText 
+{
+    color:rgb(14, 100, 157);
+    font-size:35px;   
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:bold;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    
+     
+}
+body
+{
+  display:flex;
+  background-position:center;
+background-attachment:fixed;
+justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.seventh
+{
+  box-sizing:content-box;
+  width:50%;
+  border-radius: 25px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(7, 50, 115);
+  margin:auto;
+  align-items: center;
+  padding:10px;
+ 
+}
+#n{
+  
+  font-size:16px;   
+  font-family: 'Times New Roman', Times, serif;
+  font-weight:bold;
+  display:flex;
+justify-content: center; 
+}
+.m{
+  font-size:16px;   
+  font-family: 'Times New Roman', Times, serif;
+  font-weight:bold;
+  display:flex;
+justify-content: center; 
+}
+</style>
 </head>
-<body>
+<body style="background-image: url('{% static 'images/hi2.jpg' %}'); background-repeat:no-repeat;background-size:100%;">
 <div class="seventh">
- <span><center>if you have some questions or need Help! please contact us!<br>
+ <span id="welcomeText"><center>If you have some questions or need Help! please contact us!<br>
  We Provide Clean and healthy PG for you...</center></span><br><br/>
  <address>
-<span id="n">NEPTUNE SOLUTION:</span><br/>
-<span id="n">SCO 85-86, Third Floor, Sector 34A, Chandigarh</span> <br/>
-<img src="{% static 'images/t.png' %}" class="m"/><span id="n">contact@neptunesolution.in</span><br/>
-<img src="{% static 'images/images.png' %}" class="m"/><span id="n">+91172-4693718  +91 9780373638
+<span id="n">Bala's street:</span><br/>
+<span id="n">VPO Pragpur, Teh. Dehra, Distt. Kangra Himachal Pradesh</span> <br/>
+<img src="{% static 'images/t.png' %}" class="m"/><span id="n">contact@Balastreet.in</span><br/>
+<img src="{% static 'images/images.png' %}" class="m"/><span id="n">+9118584884  +91 9284482838
  +91 9780415192</span>
 </address>
 <form action="/feed1/" method="POST">
 {% csrf_token %}
 <input type="text" name="t1" value="" placeholder="your name" id="x"><br/>
-<input type="text" name="t2" value="" placeholder="your email" id="y"><br/><br/>
+<input type="text" name="t2" value="" placeholder="your email" id="y"><br/>
 <input type="text" name="t3" value="" placeholder="your message" id="z"><br/><br/>
 <input type="submit" value="Send Message" id="v">
 </form>

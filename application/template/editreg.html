@@ -30,6 +30,7 @@ margin:auto;
 width:50%;
 background-color:rgb(0,0,0,0.5);
 padding:15px;
+
 }
 #reg{
 margin:auto;
@@ -78,7 +79,7 @@ color:white;
 </head>
 <body>
 <div class="reg">
-{% for single in alldata %}
+{% for single in alldata %} 
 <h1><u>Register Here</u></h1>
 <form action="/final/" method="POST" id="reg">
 {% csrf_token %}
@@ -99,11 +100,11 @@ color:white;
 <input type="Password" name="t6" id="name" value="{{ single.pwd}}"><br/><br/>
 <span id="a">Confirm-password:</span><br/>
 <input type="Password" name="t7" id="name" value="{{ single.cpwd}}"><br/><br/>
-<input type="checkbox" id="c"><span id="ch">i agree all the terms and conditions</span><br/><br/>
+<input type="checkbox" id="c"><span id="ch">I agree all the terms and conditions</span><br/><br/>
 <button type="Submit" id="sub">Register</button><br/><br/>
 <p>Already have an account??<a href="/form/">Login Here</p></a>
 </form>
-{% endfor %}
+{% endfor %} 
 </div>
 </div>
 </body>

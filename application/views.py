@@ -52,7 +52,7 @@ def showreq(request):
 		data=Sendreq1.objects.filter(p_email=email).all()
 		return render(request, "template/showreq.html",{"alldata":data})
 	else:
-		return redirect("/form/")	
+		return redirect("/form/")	 
 		
 def showpg(request):
 	if request.session.has_key('user'):
